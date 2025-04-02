@@ -118,7 +118,7 @@ For these problems, we will continue to work with the `mpg` data frame, making v
 
 ```{r}
 mpg %>%
-  mutate(fuel_type = if_else(fl %in% c("p", "r"), "petrol", "alternative energy"))
+  mutate(fuel_type = if_else(fl %in% c("p", "r", "d"), "petrol", "alternative energy"))
 ```
 
 12. The `drv` variable describes if the car has front drive (`f`), rear drive (`r`), or four wheel drive (`4`). Let's make better labels for these values! Specifically, use the `case_when()` function to change the `drv` varible to have the following levels: `front`, `rear`, `four wheel`.
@@ -149,4 +149,19 @@ mpg %>%
 
 14. Find someone who took Stat 331 from a different professor than you. Compare your experiences. Tell me their name and professor. List one or two things that you think you learned more about, and one or two things that they learned more about.
 
+Lily Cook and she took STAT 331 with Dr. Frame. I think we learned more about stringR towards the end of the course which Lily did not. Lily did more work I believe with dplyr as her course focused solely on statements like joins whereas we moved around a lot. 
+
 15. Find someone in the class who **does not** share your birth month. Tell me their name and birthday, and use R to find out how many days apart your birthdays are.
+
+Liam Quach, he was born on June 14th. 
+
+```{r}
+#| label: birthday comparison
+
+my_bd <- as.Date("2002-08-31")
+
+liam_bd <- as.Date("2002-06-14")
+
+my_bd-liam_bd
+```
+
